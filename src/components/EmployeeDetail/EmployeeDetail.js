@@ -1,5 +1,9 @@
+//Pascal case = PascalCase
+//Camel case = camelCase
+//Snake case = snake-case
 
-function EmployeeDetail () {
+
+function EmployeeDetail() {
     return (
         <div>
             <div>EmployeeDetail</div>

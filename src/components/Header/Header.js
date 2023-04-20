@@ -1,7 +1,7 @@
 
-function Header (){
+function Header (props){
     return (
-        <h1>Employee Directory</h1>
+        <h5>{props.headerTitle}</h5>
     )
 }
 

@@ -62,6 +62,15 @@ email: "mike@email.com"
 
 function App() {
   const [employeeData, setEmployeeData] = useState(data);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleSearch = () => {
+    const filteredData = employeeData.filter(({ name }) => {
+       return name === inputValue
+    });
+    console.log('Filtered data', filteredData)
+    setEmployeeData(filteredData);
+  };
 
   const handleAddEmployee = () => {
     setEmployeeData([...data, newEmployee])
@@ -70,7 +79,11 @@ function App() {
     <div className="App">
       <NavBar />
       <Wrapper>
-         <HomePage employeeData={employeeData} />
+         <HomePage 
+           setInputValue={setInputValue} 
+           employeeData={employeeData} 
+           handleSearch = {handleSearch} 
+           />
          <EmployeePage employeeData={employeeData} />
       </Wrapper>
       <button onClick = {handleAddEmployee}>Add Employee</button>

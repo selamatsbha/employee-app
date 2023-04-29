@@ -4,6 +4,7 @@ import EmployeePage from './components/EmployeePage/EmployeePage';
 import NavBar from './components/NavBar/NavBar';
 import Wrapper from './components/Wrapper/Wrapper';
 import { useState } from 'react';
+import AddEmployee from './components/AddEmployee/AddEmployee';
 
 //functional component
 //class component
@@ -14,7 +15,7 @@ import { useState } from 'react';
 const data = [
   {
     image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    name: "James King",
+    fullName: "James King",
     title: "president and CEO",
     callOffice: "0838202389",
     callMobile: "30838480504",
@@ -23,7 +24,7 @@ const data = [
   },
   {
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    name: "Julie Taylor",
+    fullName: "Julie Taylor",
     title: "VP of markating",
     callOffice: "899034789",
     callMobile: "345678321",
@@ -32,7 +33,7 @@ const data = [
   },
   {
     image: "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    name: "Ray Moore",
+    fullName: "Ray Moore",
     title: "Vp of sales",
     callOffice: "7845202389",
     callMobile: "20948480504",
@@ -41,7 +42,7 @@ const data = [
   },
   {
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    name: "Donell Khaled",
+    fullName: "Donell Khaled",
     title: "FE Web Developer",
     callOffice: "7845202389",
     callMobile: "20948480504",
@@ -52,7 +53,7 @@ const data = [
 
 const newEmployee = {
   image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-name: "Mike Min",
+fullName: "Mike Min",
 title: "BE Web Developer",
 callOffice: "7845202389",
 callMobile: "20948480504",
@@ -87,6 +88,7 @@ function App() {
          <EmployeePage employeeData={employeeData} />
       </Wrapper>
       <button onClick = {handleAddEmployee}>Add Employee</button>
+      <AddEmployee employeeData={employeeData} setEmployeeData={setEmployeeData} />
     </div>
     
   );

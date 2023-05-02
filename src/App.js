@@ -1,10 +1,11 @@
 import './App.css';
-import HomePage from './components/HomePage/HomePage';
-import EmployeePage from './components/EmployeePage/EmployeePage';
-import NavBar from './components/NavBar/NavBar';
-import Wrapper from './components/Wrapper/Wrapper';
+import HomePage from './pages/HomePage';
 import { useState } from 'react';
-import AddEmployee from './components/AddEmployee/AddEmployee';
+import AddEmployeePage from './pages/AddEmployeePage';
+import {Routes, Route} from 'react-router-dom';
+import EmployeeListPage from './pages/EmployeeListPage';
+
+
 
 //functional component
 //class component
@@ -73,24 +74,17 @@ function App() {
     setEmployeeData(filteredData);
   };
 
-  const handleAddEmployee = () => {
-    setEmployeeData([...data, newEmployee])
-  }
   return (
-    <div className="App">
-      <NavBar />
-      <Wrapper>
-         <HomePage 
-           setInputValue={setInputValue} 
-           employeeData={employeeData} 
-           handleSearch = {handleSearch} 
-           />
-         <EmployeePage employeeData={employeeData} />
-      </Wrapper>
-      <button onClick = {handleAddEmployee}>Add Employee</button>
-      <AddEmployee employeeData={employeeData} setEmployeeData={setEmployeeData} />
-    </div>
-    
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="add-employee" element={
+          <AddEmployeePage 
+             employeeData={employeeData} 
+             setEmployeeData={setEmployeeData}/>} />
+      <Route path="/employee-list" element={< EmployeeListPage setInputValue={setInputValue} 
+             employeeData={employeeData} 
+             handleSearch = {handleSearch}/>} />
+    </Routes>
   );
 }
 

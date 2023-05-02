@@ -11,7 +11,17 @@ const AddEmployee = (props) => {
         callOffice: "",
     } );
 
+    const [showSuccessAlert, setShowSuccessAlert] = useState(false)
+    
     console.log("input values", inputValues);
+    const SuccessAlert = () => {
+      return (
+        <div style={{backgroundColor: "lightgreen", border: "1px solid lightgreen", height: "160px"}}>
+        <h2>Succes</h2>
+        <p>You have successfuly submite an employee information!</p>
+      </div>
+      )
+    };
 
     const handelChange = (event) => {
         const {name, value} = event.target
@@ -21,9 +31,13 @@ const AddEmployee = (props) => {
       const handleSubmit = (event) => {
         event.preventDefault();
         props.setEmployeeData([...props.employeeData, inputValues]);
+        setShowSuccessAlert(true)
       };
 
     return (
+       <>
+       <h1>Add Employee</h1>
+        {showSuccessAlert && <SuccessAlert />}
         <form className="add-employee-form" onSubmit={handleSubmit} >
             <input 
               type="text" 
@@ -69,6 +83,7 @@ const AddEmployee = (props) => {
               onChange={handelChange}/>
             <button>Submit</button>
         </form>
+       </>
     );
 };
 

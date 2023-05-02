@@ -1,7 +1,6 @@
-// functional component
-// class components
 import { Fragment } from "react";
 import './NavBar.css';
+import {Link} from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -14,10 +13,10 @@ function NavBar() {
                         listStyle: "none",
                         color: "#fff",
                         cursor: "pointer",}}>
-                <li>Home</li>
-                <li>Add Employee</li>
-                <li>Employee List</li>
-                <li>Logout</li>
+                <li><Link style={{textDecoration: "none", color: "#fff" }} to="/">Home</Link></li>
+                <li><Link style={{textDecoration: "none", color: "#fff" }} to="/add-employee">Add Employee</Link></li>
+                <li><Link style={{textDecoration: "none", color: "#fff" }} to="/employee-list">Employee List</Link></li>
+                <li><Link style={{textDecoration: "none", color: "#fff" }} to="/">Logout</Link></li>
             </ul>
         </div>
     </Fragment>

@@ -50,17 +50,8 @@ const data = [
     sms: "5715380387",
     email: "ray@email.com"
   },
-]
+];
 
-const newEmployee = {
-  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-fullName: "Mike Min",
-title: "BE Web Developer",
-callOffice: "7845202389",
-callMobile: "20948480504",
-sms: "5715380387",
-email: "mike@email.com"
-};
 
 function App() {
   const [employeeData, setEmployeeData] = useState(data);

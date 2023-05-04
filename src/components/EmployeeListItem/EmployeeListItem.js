@@ -3,13 +3,13 @@ import './EmployeeListItem.css';
 function EmployeeListItem ({ employeeData }) {
     return (
         <>
-        {employeeData.map(({ image, fullName, title }, index) => {
+        {employeeData.map(({ image, name, occupation }, index) => {
             return (
                  <div className = "employee-list-item" key={index}>
                    <img src ={image  } alt = "Some here" />
                    <div className = "employee-content">
-                   <h4 className = "employee-name">{fullName}</h4>
-                   <p className = "employee-title">{title}</p>
+                   <h4 className = "employee-name">{name}</h4>
+                   <p className = "employee-title">{occupation}</p>
                    </div>
                  </div>
             );

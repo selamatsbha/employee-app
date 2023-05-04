@@ -8,10 +8,13 @@ const EmployeeListPage = (props) => {
         <>
         <NavBar />
         <Wrapper>
-            <HomePage setInputValue={props.setInputValue} 
+            <HomePage 
+             error={props.error} 
+             setInputValue={props.setInputValue} 
              employeeData={props.employeeData} 
              handleSearch = {props.handleSearch}/>
-            <EmployeePage setInputValue={props.setInputValue} 
+            <EmployeePage 
+            setInputValue={props.setInputValue} 
              employeeData={props.employeeData} 
              handleSearch = {props.handleSearch}/>
         </Wrapper>

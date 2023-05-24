@@ -1,6 +1,9 @@
 import './EmployeeListItem.css';
+import { useContext } from 'react';
+import { EmployeeContext } from '../../EmployeeAppContext';
 
-function EmployeeListItem ({ employeeData }) {
+function EmployeeListItem () {
+    const {employeeData} = useContext(EmployeeContext)
     return (
         <>
         {employeeData.map(({ image, name, occupation }, index) => {

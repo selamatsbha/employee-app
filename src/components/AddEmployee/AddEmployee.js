@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './AddEmployee.css';
-const AddEmployee = (props) => {
+import { EmployeeContext } from '../../EmployeeAppContext';
+
+const AddEmployee = () => {
+    const { setEmployeeData, employeeData } = useContext(EmployeeContext)
     const [inputValues, setInputValues] = useState( {
         fullName: "",
         title: "",
@@ -13,7 +16,6 @@ const AddEmployee = (props) => {
 
     const [showSuccessAlert, setShowSuccessAlert] = useState(false)
     
-    console.log("input values", inputValues);
     const SuccessAlert = () => {
       return (
         <div style={{backgroundColor: "lightgreen", border: "1px solid lightgreen", height: "160px"}}>
@@ -30,7 +32,7 @@ const AddEmployee = (props) => {
 
       const handleSubmit = (event) => {
         event.preventDefault();
-        props.setEmployeeData([...props.employeeData, inputValues]);
+        setEmployeeData([...employeeData, inputValues]);
         setShowSuccessAlert(true)
       };
 

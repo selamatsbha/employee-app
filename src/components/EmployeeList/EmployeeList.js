@@ -1,11 +1,13 @@
 import EmployeeListItem from "../EmployeeListItem/EmployeeListItem";
+import { useContext } from "react";
+import { EmployeeContext } from "../../EmployeeAppContext";
 
-const EmployeeList = (props) => {
-    console.log("props from employee list", props);
+const EmployeeList = () => {
+    const {isError} = useContext(EmployeeContext)
     return (
         <>
-        { props.error !== "" && <p style={{color:"red"}}>{props.error}</p>}
-        <EmployeeListItem employeeData={props.employeeData} />
+        { isError !== false && <p style={{color:"red"}}>Server error please try again</p>}
+        <EmployeeListItem />
         
         </>
     )

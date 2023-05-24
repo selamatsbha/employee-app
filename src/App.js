@@ -4,7 +4,7 @@ import AddEmployeePage from './pages/AddEmployeePage';
 import {Routes, Route} from 'react-router-dom';
 import EmployeeListPage from './pages/EmployeeListPage';
 import { EmployeeProvider } from './EmployeeAppContext';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 
 

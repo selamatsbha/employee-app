@@ -13,6 +13,7 @@ export const EmployeeProvider = (props) => {
     const [inputValue, setInputValue] = useState("");
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [employeeDetail, setEmployeeDetail] = useState({});
   
     const apiUrl = "https://lit-dusk-21328.herokuapp.com/api/employees/allemployees"
   
@@ -35,6 +36,8 @@ export const EmployeeProvider = (props) => {
         const response = await axios.get(apiUrl);
         const data = await response.data;
         setEmployeeData(data);
+        setEmployeeDetail(data[0]);
+        setIsLoading(false);
         console.log('data', data);
       } catch (error) {
         setIsError(true);
@@ -56,7 +59,7 @@ export const EmployeeProvider = (props) => {
       setEmployeeData(filteredData);
     };
   return (
-    <EmployeeContext.Provider value={{employeeData, setEmployeeData, inputValue, setInputValue, isError, setIsError, isLoading, setIsLoading, handleSearch}}>
+    <EmployeeContext.Provider value={{employeeData, setEmployeeData, inputValue, setInputValue, isError, setIsError, isLoading, setIsLoading, handleSearch, employeeDetail, setEmployeeDetail}}>
       {props.children}
     </EmployeeContext.Provider>
   );

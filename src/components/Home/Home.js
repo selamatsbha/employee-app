@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const StyledHeading = styled.h1`
 font-size: ${({theme}) => theme.primaryHeaderFontSize }px;
@@ -20,6 +21,7 @@ margin-top: 1.5rem;
 `;
 
 const Home = () => {
+  const navigate = useNavigate()
     return (
         <StyledHome>
           <StyledHeading>Welcom Home!</StyledHeading>
@@ -29,7 +31,7 @@ const Home = () => {
           <StyledButtonContainer>
             {/* <StyledButton>Login</StyledButton>
             <StyledButton>Register</StyledButton> */}
-            <Button variant="contained">Login</Button>
+            <Button variant="contained" onClick={() => navigate('./login')}>Login</Button> 
             <Button variant="outlined">Register</Button>
           </StyledButtonContainer>
         </StyledHome>

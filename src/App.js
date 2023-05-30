@@ -5,6 +5,7 @@ import {Routes, Route} from 'react-router-dom';
 import EmployeeListPage from './pages/EmployeeListPage';
 import { EmployeeProvider } from './EmployeeAppContext';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import LoginPage from './pages/LoginPage'; 
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="add-employee" element={<AddEmployeePage />} />
           <Route path="/employee-list" element={< EmployeeListPage />} />
+          <Route path="/login" element={< LoginPage />} />
         </Routes>
       </EmployeeProvider>
     </ThemeProvider>
